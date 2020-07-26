@@ -7,7 +7,6 @@ import { LOGIN_SUCCESS } from "./reducer";
 
 const useStyles = makeStyles({
   root: {
-    height: '100%',
     padding: 20,
   },
   buttonWrapper: {
@@ -49,14 +48,7 @@ export default function Login() {
     }
   };
   return (
-    <Grid
-      container
-      direction="column"
-      alignItems="center"
-      justify="center"
-      className={classes.root}
-    >
-      <Grid container direction="column" alignItems="center">
+      <Grid container direction="column" alignItems="center" className={classes.root}>
         <Grid item xs={12} md={6} className={classes.field}>
           <TextField
             label="Username"
@@ -88,6 +80,5 @@ export default function Login() {
           </Button>
         </Grid>
       </Grid>
-    </Grid>
   );
 }

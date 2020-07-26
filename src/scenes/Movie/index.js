@@ -39,10 +39,10 @@ const useStyles = makeStyles((theme) => ({
     height: "calc(100vh - 60px)",
     marginTop: 60,
     background: "#eaeaea",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center"
+    // display: "flex",
+    // flexDirection: "column",
+    // alignItems: "center",
+    // justifyContent: "center"
   },
 }));
 

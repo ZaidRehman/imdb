@@ -5,10 +5,9 @@ import { useDispatch } from "react-redux";
 import { SET_SNACKBAR_TEXT } from "../../services/store";
 import { LOGIN_SUCCESS } from "./reducer";
 
-
 const useStyles = makeStyles({
   root: {
-    width: "auto",
+    height: '100%',
     padding: 20,
   },
   buttonWrapper: {
@@ -31,12 +30,12 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
-    if(username === "admin" && password === "admin") {
+    if (username === "admin" && password === "admin") {
       dispatch({
         type: LOGIN_SUCCESS,
         data: {
-          isAuthenticated: true
-        }
+          isAuthenticated: true,
+        },
       });
       history.push("/movie/list");
     } else {
@@ -50,36 +49,44 @@ export default function Login() {
     }
   };
   return (
-    <Grid container direction="column" alignItems="center">
-      <Grid item xs={12} md={6} className={classes.field}>
-        <TextField
-          label="Username"
-          variant="outlined"
-          fullWidth
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </Grid>
-      <Grid item xs={12} md={6} className={classes.field}>
-        <TextField
-          label="Passwod"
-          variant="outlined"
-          fullWidth
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </Grid>
-      <Grid item xs={12} md={6} className={classes.buttonWrapper}>
-        <Button
-          variant="outlined"
-          margin={15}
-          color="secondary"
-          className={classes.button}
-          onClick={handleSubmit}
-        >
-          Login
-        </Button>
+    <Grid
+      container
+      direction="column"
+      alignItems="center"
+      justify="center"
+      className={classes.root}
+    >
+      <Grid container direction="column" alignItems="center">
+        <Grid item xs={12} md={6} className={classes.field}>
+          <TextField
+            label="Username"
+            variant="outlined"
+            fullWidth
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </Grid>
+        <Grid item xs={12} md={6} className={classes.field}>
+          <TextField
+            label="Passwod"
+            variant="outlined"
+            fullWidth
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Grid>
+        <Grid item xs={12} md={6} className={classes.buttonWrapper}>
+          <Button
+            variant="outlined"
+            margin={15}
+            color="secondary"
+            className={classes.button}
+            onClick={handleSubmit}
+          >
+            Login
+          </Button>
+        </Grid>
       </Grid>
     </Grid>
   );
